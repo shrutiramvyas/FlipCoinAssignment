@@ -15,11 +15,11 @@ do
         ((head++));
         echo "head : $head"
     fi
-    if [[ $head -eq 22 ]]
+    if [[ $head -eq 21 ]]
     then    
         echo "Head won";
         break;
-    elif [[ $tail -eq 22 ]]
+    elif [[ $tail -eq 21 ]]
     then
         echo "Tail won";
         break;
