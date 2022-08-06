@@ -1,16 +1,29 @@
-#!bin/bash
 
+
+#!bin/bash
+flip=$((RANDOM%2));
+echo $flip
 head=0;
 tail=0;
-for (( i=0; i<=10;i++ ))
-do 
-	flip=$((RANDOM%2))
-	if [ $flip -eq 0 ]
-	then
-		((head++))
-	else
-		((tail++))
-	fi
+while [ $head -ne 22 -o $tail -ne 22 ]
+do
+    if [[ $flip -eq 0 ]] 
+    then
+        ((tail++));
+        echo "tail : $tail"
+    else
+        ((head++));
+        echo "head : $head"
+    fi
+    if [[ $head -eq 22 ]]
+    then    
+        echo "Head won";
+        break;
+    elif [[ $tail -eq 22 ]]
+    then
+        echo "Tail won";
+        break;
+    fi
+    flip=$((RANDOM%2));  
 done
-echo "No of Head : $head"
-echo "No of Tail : $tail"
+
